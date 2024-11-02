@@ -11,6 +11,7 @@ class Post extends Model
     use HasFactory;
 
     protected $table = 'posts';
+    protected $fillable = ['title', 'slug', 'content', 'category'];
 
     protected function casts():array{
         return [

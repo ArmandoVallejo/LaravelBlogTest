@@ -25,15 +25,8 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $post = new Post();
-
-        $post->title = $request->title;
-        $post->slug = $request->title;
-        $post->content = $request->content;
-        $post->category = $request->category;
-        $post->save();
-
-        return redirect()->route('posts.index');
+        Post::create($request->all());
+        
     }
 
     public function edit(Post $post)
